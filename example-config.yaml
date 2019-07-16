@@ -1,0 +1,22 @@
+env: /home/user/unity/envs/ExampleEnvironment # (required) path to ML-Agents-enabled executable
+log_path: log                                 # path to logging directory
+num_timesteps: 1.0e+6                         # number of steps to train
+use_visual: True                              # use visual observations from Unity
+save_path: model.pkl                          # path to save the trained model
+save_interval: 50000                          # number of timesteps between saving events
+save_video_interval: 100000                   # how frequently to save video during training
+save_video_length: 1000                       # length of saved video
+
+# algorithm specific arguments see algorithm documentation for details
+# i.e. https://github.com/openai/baselines/blob/master/baselines/ppo2/ppo2.py#L21
+alg: ppo2
+network: cnn
+nminibatches: 4
+ent_coef: 0.0
+lr: 3.0e-4
+vf_coef: 0.5
+max_grad_norm: 0.5
+gamma: 0.995
+lam: 0.95
+noptepochs: 4
+cliprange: 0.2
